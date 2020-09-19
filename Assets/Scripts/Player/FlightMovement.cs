@@ -12,22 +12,35 @@ public class FlightMovement : MonoBehaviour
     public bool useAutocorrect = true;
     public float autoCorrect = .2f;
     public bool controlEnabled;
-
+    public bool useMouse = false;
+    public bool invertY = false;
+    public float mouseSens = 2;
     private Rigidbody rb;
     private float hInput, vInput, rInput;
-
     [SerializeField] Transform myCamera;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         controlEnabled = true;
+        if(useMouse)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     void Update()
     {
-        hInput = Input.GetAxis("Horizontal"); //yaw
-        vInput = Input.GetAxis("Vertical"); //pitch
+        int invert = invertY ? -1 : 1;
+        if(!useMouse){
+            hInput = mouseSens * Input.GetAxis("Horizontal"); //yaw
+            vInput = mouseSens * invert * Input.GetAxis("Vertical"); //pitch
+        }
+        else{
+            hInput = mouseSens * Input.GetAxis("Mouse X"); //yaw
+            vInput = invert * mouseSens * Input.GetAxis("Mouse Y"); //pitch
+        }
         rInput = Input.GetAxis("Roll");
         //transform.Rotate(new Vector3(0,0, rInput * rollSens * Time.deltaTime), Space.Self);
 

@@ -319,6 +319,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 7883604984642836351, guid: 3cc411a0aa092624ebc40f39ea060aaa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8769168041865396604, guid: 3cc411a0aa092624ebc40f39ea060aaa, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0

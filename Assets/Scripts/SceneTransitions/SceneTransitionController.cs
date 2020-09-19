@@ -28,7 +28,7 @@ public class SceneTransitionController : MonoBehaviour
         cutoffPropertyID = Shader.PropertyToID("_Cutoff");
         transitionTexPropertyID = Shader.PropertyToID("_TransitionTex");
         if(defaultTex == null) {defaultTex = imageMat.GetTexture(transitionTexPropertyID);}
-        smoothCorrection = imageMat.GetFloat("_UseSmoothstep") * imageMat.GetFloat("_EdgeSmoothing");
+        //smoothCorrection = imageMat.GetFloat("_UseSmoothstep") * imageMat.GetFloat("_EdgeSmoothing");
         StartCoroutine(SwapSceneCoroutine(true));
     }
     
@@ -40,6 +40,7 @@ public class SceneTransitionController : MonoBehaviour
 
     private IEnumerator SwapSceneCoroutine(bool isEntering)
     {
+        image.enabled = true;
         imageMat.SetFloat(cutoffPropertyID, 0);
         SetTexture(ref isEntering);
         animating = true;
@@ -51,7 +52,7 @@ public class SceneTransitionController : MonoBehaviour
         float timer = 0;
         while(timer < transitionDuration)
         {
-            float progress = isEntering ? (timer/transitionDuration) + .01f : 1 - (timer/transitionDuration) - 0.01f - smoothCorrection;
+            float progress = isEntering ? (timer/transitionDuration) + .02f : 1 - (timer/transitionDuration) - 0.02f - smoothCorrection;
             imageMat.SetFloat(cutoffPropertyID, progress);
             timer += Time.deltaTime;
             yield return null;
@@ -59,6 +60,7 @@ public class SceneTransitionController : MonoBehaviour
 
         animating = false;
         if(!isEntering){SceneManager.LoadScene(destinationScene);}
+        else{ image.enabled = false; }
         yield return null;
     }
 
