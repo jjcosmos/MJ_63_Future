@@ -50,7 +50,7 @@ public class FlightMovement : MonoBehaviour
     {
         if(!controlEnabled) return;
 
-        rb.AddForce(transform.forward * flightSpeed * (1 + (GlobalVars.difficultyManager.currentDifficultyMod/10f)));
+        rb.AddForce(transform.forward * flightSpeed * Mathf.Clamp((1 + (GlobalVars.difficultyManager.currentDifficultyMod/20f)), 0, 2f)  );
         rb.AddTorque(transform.forward * -rInput * rollSens);
         rb.AddTorque(transform.right * vInput * pitchSens);
         //transform.Rotate(new Vector3(0, hInput * yawSens, 0 ), Space.Self);

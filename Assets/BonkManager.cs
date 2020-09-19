@@ -7,13 +7,16 @@ public class BonkManager : MonoBehaviour
 {
     [SerializeField] FlightMovement playerControls;
     [SerializeField] SceneTransitionController controller;
-    [SerializeField] CinemachineVirtualCamera vcam2;
-
+    [SerializeField] CinemachineFreeLook vcam2;
+    [SerializeField] GameObject restartPrompt;
+    [SerializeField] GameObject toDisable;
+    [SerializeField] GameObject toEnable;
+ 
     private bool lost = false;
-    private CinemachineTrackedDolly dolly;
+    
 
     private void Start() {
-        dolly = vcam2.GetCinemachineComponent<CinemachineTrackedDolly>();
+        //freelook = vcam2.GetCinemachineComponent<CinemachineFreeLook>();
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -23,7 +26,16 @@ public class BonkManager : MonoBehaviour
             Debug.Log("Bonk");
             lost = true;
             playerControls.controlEnabled = false;
-            vcam2.Priority = 20;
+            Rigidbody playerRB = playerControls.GetComponent<Rigidbody>();
+            playerRB.useGravity = true;
+            playerRB.drag = 0;
+            playerRB.angularDrag = 0;
+            playerRB.isKinematic = true;
+            vcam2.Priority = 30;
+            restartPrompt.SetActive(true);
+            GlobalVars.SetHighScore(GlobalVars.scoreTracker.score);
+            toDisable.SetActive(false);
+            toEnable.SetActive(true);
         }
         else{
             Debug.Log($"Hit mystery {other.collider.name}");
@@ -37,11 +49,12 @@ public class BonkManager : MonoBehaviour
         }
         if(lost)
         {
-            dolly.m_PathPosition += Time.deltaTime;
+            vcam2.m_XAxis.Value = Time.deltaTime*2 + vcam2.m_XAxis.Value;
         }
     }
     private void Lose()//reset
     {
+        restartPrompt.SetActive(false);
         controller.SwapScene();
     }
 }

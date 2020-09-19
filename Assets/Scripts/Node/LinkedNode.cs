@@ -11,16 +11,19 @@ public class LinkedNode : MonoBehaviour
 
     private int indexInChain = 0;
     private bool triggered = false;
-    private static int childrenDensity = 3;
+    private int childrenDensity = 3;
     private static int maxForwardDelta = 5;
     public static KitScriptableObject currentKit;
     private static float rotationalChaos = 100.35f;
     public int samplRate;
+    private int localDifficulty;
 
     private void Awake() 
     {
         indexInChain = GlobalVars.seededSpawner.currentNodeIndex;
         samplRate = GlobalVars.SampleRate;
+        localDifficulty = GlobalVars.difficultyManager.currentDifficultyMod;
+        childrenDensity += localDifficulty;
         StartCoroutine(SpawnChildrenCoroutine());
 
         //float mapTest = ReedsUtils.Remap(.3f,0,1,-maxForwardDelta,maxForwardDelta);
