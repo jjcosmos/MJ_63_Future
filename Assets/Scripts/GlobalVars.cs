@@ -10,6 +10,7 @@ public class GlobalVars : MonoBehaviour
     public static ScoreTracker scoreTracker;
     public static DifficultyManager difficultyManager;
     public static KitComparator playerKitComparator;
+    public static AchievementManager achievementManager;
     public static int seed = 100;
 
     public int sampleRate;

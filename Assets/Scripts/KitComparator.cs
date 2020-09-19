@@ -18,6 +18,8 @@ public class KitComparator : MonoBehaviour
         {
             Debug.Log($"entering new kit: {newKit.name} from {currentKit.name}");
             currentKit = newKit;
+
+            GlobalVars.achievementManager.RecieveAchivementRequest(currentKit.linkedAchievement);
         }
     }
 }
