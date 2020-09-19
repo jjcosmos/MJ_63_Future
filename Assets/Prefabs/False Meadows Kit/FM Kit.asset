@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679cbd77a04c0a64d83c36b28730ee4a, type: 3}
+  m_Name: FM Kit
+  m_EditorClassIdentifier: 
+  name: False Meadows
+  material: {fileID: 2100000, guid: e78409c4ab34c654ca2d7de900a49b39, type: 2}
+  skyboxColor: {r: 0.20000002, g: 0.64705884, b: 1, a: 0}
+  kitObjects:
+  - {fileID: 4232662383554216872, guid: 3db36ef09ca294c49b10c56285d954a4, type: 3}
+  - {fileID: 9084859235168383958, guid: c2d5055b7140bce49a04097b48070c60, type: 3}
+  - {fileID: 1745993809624658816, guid: 43fb89f441962e54285bed6c0f018c88, type: 3}
+  - {fileID: 2061755090865449149, guid: 6c1523c4a1da99d41a79d9c2d6901db6, type: 3}
+  - {fileID: 2855184357803745227, guid: 1b25c51ac0990fe4fbebb4997d0d5b2e, type: 3}

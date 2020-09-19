@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class KitScriptableObject : ScriptableObject
 {
     public string name;
+    public Material material;
+    public Color skyboxColor;
     public List<GameObject> kitObjects;
     
 }

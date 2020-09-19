@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679cbd77a04c0a64d83c36b28730ee4a, type: 3}
+  m_Name: Void Planes Kit
+  m_EditorClassIdentifier: 
+  name: Void Planes
+  material: {fileID: 2100000, guid: 9fc4f139bafbcd44dbe2da1c6dca050f, type: 2}
+  skyboxColor: {r: 0.09019608, g: 0.098039225, b: 0.10588236, a: 0}
+  kitObjects:
+  - {fileID: 523003345394259794, guid: f3bd8647bb94807438978019ef98c02a, type: 3}
+  - {fileID: 5034251571588562583, guid: e7bcd1c065200714abfb50c810f222b2, type: 3}
+  - {fileID: 4060023180664810746, guid: b42cbfcbe65640844869da6c3c8b1ab4, type: 3}

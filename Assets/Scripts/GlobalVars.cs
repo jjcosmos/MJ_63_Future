@@ -9,6 +9,7 @@ public class GlobalVars : MonoBehaviour
     public static CinemachineFreeLook mainCineCam;
     public static ScoreTracker scoreTracker;
     public static DifficultyManager difficultyManager;
+    public static KitComparator playerKitComparator;
     public static int seed = 100;
 
     public int sampleRate;

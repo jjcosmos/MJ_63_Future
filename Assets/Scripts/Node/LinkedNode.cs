@@ -8,12 +8,14 @@ public class LinkedNode : MonoBehaviour
     public LinkedNode next {get; set;}
 
     [SerializeField] GameObject meshNode;
+    [SerializeField] MeshRenderer actualMesh;
 
     private int indexInChain = 0;
     private bool triggered = false;
     private int childrenDensity = 3;
     private static int maxForwardDelta = 5;
     public static KitScriptableObject currentKit;
+    public KitScriptableObject localKit;
     private static float rotationalChaos = 100.35f;
     public int samplRate;
     private int localDifficulty;
@@ -24,10 +26,16 @@ public class LinkedNode : MonoBehaviour
         samplRate = GlobalVars.SampleRate;
         localDifficulty = GlobalVars.difficultyManager.currentDifficultyMod;
         childrenDensity += localDifficulty;
+        localKit = currentKit;
         StartCoroutine(SpawnChildrenCoroutine());
 
         //float mapTest = ReedsUtils.Remap(.3f,0,1,-maxForwardDelta,maxForwardDelta);
         //Debug.Log("Map test says " + mapTest);
+    }
+
+    public void SetMaterial(ref Material mat)
+    {
+        actualMesh.material = mat;
     }
 
     private IEnumerator SpawnChildrenCoroutine()
@@ -64,9 +72,9 @@ public class LinkedNode : MonoBehaviour
 
             //float kitOffset = GlobalVars.worldGradient.GetNoiseAtPixel(offset * samplRate, offset);
             //float kitOffset = GlobalVars.worldGradient.GetHorizontalValueAtPixel(offset * samplRate);
-            int kitOffset = r.Next(0, currentKit.kitObjects.Count);
+            int kitOffset = r.Next(0, localKit.kitObjects.Count);
             //int kitIndex = (int)ReedsUtils.Remap(kitOffset, 0, 100, 0, currentKit.kitObjects.Count - .1f);
-            GameObject kitPiece = Instantiate(currentKit.kitObjects[kitOffset], transform.GetChild(0), false);
+            GameObject kitPiece = Instantiate(localKit.kitObjects[kitOffset], transform.GetChild(0), false);
 
             kitPiece.transform.localEulerAngles = new Vector3(0,0,zRotation);
             kitPiece.transform.localPosition = new Vector3(0,0,forwardPos);
@@ -99,6 +107,7 @@ public class LinkedNode : MonoBehaviour
         {
             GlobalVars.seededSpawner.SpawnInNextNode();
             GlobalVars.scoreTracker.ModScore(1);
+            GlobalVars.playerKitComparator.UpdateCurrentKitProgression(localKit);
             triggered = true;
         }
     }
