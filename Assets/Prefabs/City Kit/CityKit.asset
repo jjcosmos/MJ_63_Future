@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679cbd77a04c0a64d83c36b28730ee4a, type: 3}
+  m_Name: CityKit
+  m_EditorClassIdentifier: 
+  name: 
+  kitObjects:
+  - {fileID: 3411396450099196799, guid: e29f9fe77c998bc4fa32cb2204ae2dd8, type: 3}
+  - {fileID: 760245761997800744, guid: ddfd76a230dc39f458e0671fbe768b46, type: 3}
+  - {fileID: 2105060549360261715, guid: 5ceb04b025c65b84b8f5e37cd5311b94, type: 3}
