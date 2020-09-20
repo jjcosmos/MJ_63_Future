@@ -123,7 +123,7 @@ public class SeededSpawner : MonoBehaviour
 
     private void CheckPositionOffset(Transform lastTransform)
     {
-        float threshold = 2000;
+        float threshold = 4000;
         if(Mathf.Abs(lastTransform.position.x) > threshold || Mathf.Abs(lastTransform.position.y) > threshold || Mathf.Abs(lastTransform.position.z) > threshold)
         {
             Debug.Log("Resetting to world orgin");

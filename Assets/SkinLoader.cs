@@ -16,6 +16,8 @@ public class SkinLoader : MonoBehaviour
     {
         currentEquippedSkin = PlayerPrefs.GetString("currentskin","Default");
         SetSkin(currentEquippedSkin);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void SetSkin(string skinName)

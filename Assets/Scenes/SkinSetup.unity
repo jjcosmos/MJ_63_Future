@@ -1550,6 +1550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seededGradient: {fileID: 860107649}
+  player: {fileID: 0}
+  playercam: {fileID: 0}
+  brain: {fileID: 0}
+  FXGroup: {fileID: 0}
   currentNodeIndex: 0
   nodeLimit: 0
   recycleThreshold: 10
@@ -1708,7 +1712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 934857973964824211, guid: 1945fed6db86a7342baf250dde89fefd, type: 3}
       propertyPath: m_text
-      value: "Void Walker\n<size=50%>Unlock by reaching the Void \nFields"
+      value: "Void Walker\n<size=50%>Unlock by reaching the Void \nPlanes"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1945fed6db86a7342baf250dde89fefd, type: 3}
@@ -3851,7 +3855,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167898904}
-  m_LocalRotation: {x: 0.18275334, y: 0.32614276, z: -0.06441919, w: 0.92524713}
+  m_LocalRotation: {x: 0.18275197, y: 0.32616252, z: -0.06442309, w: 0.9252402}
   m_LocalPosition: {x: -5.065623, y: 5.75, z: 17.05252}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_Children: []
@@ -9631,7 +9635,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341353030}
-  m_LocalRotation: {x: 0.18275334, y: 0.32614273, z: -0.06441919, w: 0.9252472}
+  m_LocalRotation: {x: 0.18275197, y: 0.3261625, z: -0.064423084, w: 0.9252402}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12819,7 +12823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037520716}
-  m_LocalRotation: {x: 0.15011977, y: 0.09808521, z: -0.014968875, w: 0.98367643}
+  m_LocalRotation: {x: 0.15011977, y: 0.098085195, z: -0.014968873, w: 0.98367643}
   m_LocalPosition: {x: 4.895923, y: 0, z: -3.1450043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13021,6 +13025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentKit: {fileID: 0}
+  zoneTextController: {fileID: 0}
 --- !u!4 &2125114050
 Transform:
   m_ObjectHideFlags: 0

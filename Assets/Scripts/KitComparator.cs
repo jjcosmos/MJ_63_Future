@@ -5,6 +5,7 @@ using UnityEngine;
 public class KitComparator : MonoBehaviour
 {
     public KitScriptableObject currentKit;
+    [SerializeField] ZoneTextController zoneTextController;
 
     private void Start() {
 
@@ -18,7 +19,7 @@ public class KitComparator : MonoBehaviour
         {
             //Debug.Log($"entering new kit: {newKit.name} from {currentKit.name}");
             currentKit = newKit;
-
+            zoneTextController.PlayIntro(currentKit.name);
             GlobalVars.achievementManager.RecieveAchivementRequest(currentKit.linkedAchievement);
         }
     }

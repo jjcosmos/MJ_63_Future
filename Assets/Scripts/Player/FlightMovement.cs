@@ -9,7 +9,7 @@ public class FlightMovement : MonoBehaviour
     public float rollSens = 1;
     public float pitchSens = 1;
     public float yawSens = 1;
-    public bool useAutocorrect = true;
+    public bool useAutocorrect = false;
     public float autoCorrect = .2f;
     public bool controlEnabled;
     public bool useMouse = false;
