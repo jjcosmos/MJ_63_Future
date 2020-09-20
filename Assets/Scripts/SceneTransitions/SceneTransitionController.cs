@@ -48,6 +48,9 @@ public class SceneTransitionController : MonoBehaviour
         if(isEntering){
             yield return new WaitForSeconds(delayBeforeReveal);
         }
+        else{
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Stutter", transform.position);
+        }
 
         float timer = 0;
         while(timer < transitionDuration)

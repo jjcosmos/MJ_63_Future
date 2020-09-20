@@ -1916,9 +1916,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab985df6ff51cd04b8c23a2aee0ec840, type: 2}
   - {fileID: 11400000, guid: 57b25a26f7deddf4a8d4a6d36b433c55, type: 2}
   - {fileID: 11400000, guid: 3f160d07fb2c10749a306a91c8555d9a, type: 2}
-  L1Threshold: 20
-  L2Threshold: 50
-  L3Threshold: 100
+  L1Threshold: 10
+  L2Threshold: 20
+  L3Threshold: 30
 --- !u!4 &603075564
 Transform:
   m_ObjectHideFlags: 0
@@ -3578,6 +3578,7 @@ GameObject:
   - component: {fileID: 1167898905}
   - component: {fileID: 1167898908}
   - component: {fileID: 1167898909}
+  - component: {fileID: 1167898910}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3643,8 +3644,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167898904}
-  m_LocalRotation: {x: 0.106210686, y: 0.6415957, z: -0.09034561, w: 0.75426257}
-  m_LocalPosition: {x: -33.823746, y: 13.506314, z: 16.024912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.41, y: 4.68, z: 8.639999}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3715,6 +3716,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1167898910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167898904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1220612312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +3932,7 @@ GameObject:
   - component: {fileID: 1292889684}
   - component: {fileID: 1292889686}
   - component: {fileID: 1292889685}
+  - component: {fileID: 1292889687}
   m_Layer: 0
   m_Name: DeathParticles
   m_TagString: Untagged
@@ -8803,6 +8819,29 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1292889687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292889683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/PlayerDie
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1316329247
 GameObject:
   m_ObjectHideFlags: 3
@@ -10841,7 +10880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationScene: SkinSetup
-  transitionDuration: 0.5
+  transitionDuration: 0.6
   delayBeforeReveal: 0
   nextSceneKeycode: 0
   inTexOverride: {fileID: 2800000, guid: d56ae78bc9cffe34ab5c09d2616a2857, type: 3}
@@ -13018,6 +13057,7 @@ GameObject:
   - component: {fileID: 2125114047}
   - component: {fileID: 2125114055}
   - component: {fileID: 2125114048}
+  - component: {fileID: 2125114049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13052,6 +13092,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentKit: {fileID: 0}
   zoneTextController: {fileID: 1605523964}
+--- !u!114 &2125114049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125114046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/AmbientEngine
+  PlayEvent: 1
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &2125114050
 Transform:
   m_ObjectHideFlags: 0
@@ -13102,7 +13165,7 @@ MonoBehaviour:
   rollSens: 2.5
   pitchSens: 0.7
   yawSens: 1
-  useAutocorrect: 1
+  useAutocorrect: 0
   autoCorrect: 0.5
   controlEnabled: 0
   useMouse: 1

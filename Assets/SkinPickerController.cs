@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SkinPickerController : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string clickEvent;
     [SerializeField] SkinLoader skinLoader;
     [SerializeField] AchievementManager achievementManager;
     [SerializeField] Toggle skin0Togg;
@@ -59,25 +61,36 @@ public class SkinPickerController : MonoBehaviour
     public void SetSkin0On(bool isOn)
     {
         skinLoader.SwapSkin(0, isOn);
+        if(isOn)PlaySound();
+        
     }
 
     public void SetSkin1On(bool isOn)
     {
         skinLoader.SwapSkin(1, isOn);
+        if (isOn) PlaySound();
     }
 
     public void SetSkin2On(bool isOn)
     {
         skinLoader.SwapSkin(2, isOn);
+        if (isOn) PlaySound();
     }
 
     public void SetSkin3On(bool isOn)
     {
         skinLoader.SwapSkin(3, isOn);
+        if (isOn) PlaySound();
     }
 
     public void SetSkin4On(bool isOn)
     {
         skinLoader.SwapSkin(4, isOn);
+        if (isOn) PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(clickEvent, transform.position);
     }
 }
