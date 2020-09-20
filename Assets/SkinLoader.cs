@@ -34,7 +34,7 @@ public class SkinLoader : MonoBehaviour
             case ("VoidWalker"):
                 SwapSkin(3, true);
                 break;
-            case ("Transcendence"):
+            case ("Immortal"):
                 SwapSkin(4, true);
                 break;
         }
@@ -43,6 +43,31 @@ public class SkinLoader : MonoBehaviour
     {
         if(!turnOn) return;
         SkinScriptableObject skin = availibleSkins[index];
+        rend.materials = skin.materialSwap;
+
+        switch (index)
+        {
+            case (0):
+                PlayerPrefs.SetString("currentskin", "Default");
+                break;
+            case (1):
+                PlayerPrefs.SetString("currentskin", "Voyager");
+                break;
+            case (2):
+                PlayerPrefs.SetString("currentskin", "Tranquility");
+                break;
+            case (3):
+                PlayerPrefs.SetString("currentskin", "VoidWalker");
+                break;
+            case (4):
+                PlayerPrefs.SetString("currentskin", "Immortal");
+                break;
+        }
+    }
+
+    public void ToggleSkin(int skinIndex)
+    {
+        SkinScriptableObject skin = availibleSkins[skinIndex];
         rend.materials = skin.materialSwap;
     }
 }

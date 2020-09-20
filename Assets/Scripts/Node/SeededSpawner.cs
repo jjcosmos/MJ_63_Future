@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Cinemachine;
 
 public class SeededSpawner : MonoBehaviour
 {
     public GradientCreator seededGradient;
+    public Transform player;
+    public CinemachineVirtualCamera playercam;
+    public CinemachineBrain brain;
+    public FxContainer FXGroup;
     public int currentNodeIndex = 0;
     public int nodeLimit;
     public int recycleThreshold = 5;
@@ -28,6 +33,7 @@ public class SeededSpawner : MonoBehaviour
 
     private void Awake() 
     {
+        SetWorldType();
         mainCam = Camera.main;
         GlobalVars.seededSpawner = this;
         seededGradient.GenerateGradients();
@@ -40,6 +46,24 @@ public class SeededSpawner : MonoBehaviour
             LinkedNode.currentKit = availibleKits[currentKitIndex];
         }
         MakeThresholdSubstrings();
+    }
+
+    private void SetWorldType()
+    {
+        int worldType = PlayerPrefs.GetInt("worldtype",0);
+        switch(worldType)
+        {
+            case(0):
+                amplitudeDelta *= 2f;
+                break;
+            case(1):
+                amplitudeDelta = 0f;
+                break;
+            case(2):
+                amplitudeDelta *= 4;
+                break;
+        }
+
     }
 
     private void Start() 
@@ -94,8 +118,37 @@ public class SeededSpawner : MonoBehaviour
         }
 
         CheckForNewZone();
+        CheckPositionOffset(lastTransform);
     }
 
+    private void CheckPositionOffset(Transform lastTransform)
+    {
+        float threshold = 2000;
+        if(Mathf.Abs(lastTransform.position.x) > threshold || Mathf.Abs(lastTransform.position.y) > threshold || Mathf.Abs(lastTransform.position.z) > threshold)
+        {
+            Debug.Log("Resetting to world orgin");
+            foreach(LinkedNode node in activeNodes)
+            {
+                Vector3 offsetFromPlayer =node.transform.position - player.position ;
+                node.transform.position = offsetFromPlayer;
+            }
+            FXGroup.ClearChildren();
+            Vector3 posDelta = player.position * -1;
+            Vector3 cameraOffsetFromPlayer = player.position - playercam.transform.position ;
+            player.transform.position = Vector3.zero;
+            playercam.OnTargetObjectWarped(player, posDelta);
+            FXGroup.ClearChildren();
+            
+        }
+    }
+
+    private IEnumerator ReenableAfterAFrame()
+    {
+        yield return null;
+        playercam.enabled = true;
+        brain.enabled = true;
+    }
+    
     private void MakeThresholdSubstrings()
     {
         L1ThresholdString = L1Threshold.ToString();

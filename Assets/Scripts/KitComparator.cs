@@ -16,7 +16,7 @@ public class KitComparator : MonoBehaviour
     {
         if(newKit != currentKit)
         {
-            Debug.Log($"entering new kit: {newKit.name} from {currentKit.name}");
+            //Debug.Log($"entering new kit: {newKit.name} from {currentKit.name}");
             currentKit = newKit;
 
             GlobalVars.achievementManager.RecieveAchivementRequest(currentKit.linkedAchievement);

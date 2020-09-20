@@ -12,11 +12,12 @@ public class AchievementManager : MonoBehaviour
     private void Awake() 
     {
         GlobalVars.achievementManager = this;
+        
     }
 
     void Start()
     {
-        ACH_HasThresholdSkin = Convert.ToBoolean(PlayerPrefs.GetInt("ach_hasthresholdskin",0));
+        ACH_HasThresholdSkin = Convert.ToBoolean(PlayerPrefs.GetInt("ach_hasthresholdskin",1));
         ACH_HasMeadowsSkin = Convert.ToBoolean(PlayerPrefs.GetInt("ach_hasmeadowsskin",0));
         ACH_HasVoidSkin = Convert.ToBoolean(PlayerPrefs.GetInt("ach_hasvoidskin",0));
         ACH_HasImmortalSkin = Convert.ToBoolean(PlayerPrefs.GetInt("ach_hasimmortalskin",0));

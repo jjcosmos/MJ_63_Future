@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FlightMovement.unity
     guid: 238eb75f64d53f3488ddf32a27136fac
+  - enabled: 1
+    path: Assets/Scenes/SkinSetup.unity
+    guid: f6f890be1f006144c9f2d9fb3d7cb8f8
   m_configObjects: {}

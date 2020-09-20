@@ -18,6 +18,7 @@ public class GlobalVars : MonoBehaviour
 
     private void Awake() {
         SampleRate = sampleRate;
+        seed = PlayerPrefs.GetInt("seed", 100);
     }
     private void Update() {
         SampleRate = sampleRate;

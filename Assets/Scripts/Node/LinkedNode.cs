@@ -26,6 +26,7 @@ public class LinkedNode : MonoBehaviour
         samplRate = GlobalVars.SampleRate;
         localDifficulty = GlobalVars.difficultyManager.currentDifficultyMod;
         childrenDensity += localDifficulty;
+        childrenDensity = Mathf.Clamp(childrenDensity,0,5);
         localKit = currentKit;
         StartCoroutine(SpawnChildrenCoroutine());
 
