@@ -49,7 +49,8 @@ public class SceneTransitionController : MonoBehaviour
             yield return new WaitForSeconds(delayBeforeReveal);
         }
         else{
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Stutter", transform.position);
+            if(SceneManager.GetActiveScene().name != "CutsceneIntro")
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Stutter", transform.position);
         }
 
         float timer = 0;

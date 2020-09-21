@@ -18,7 +18,8 @@ public class CutsceneDialogue : MonoBehaviour
             sceneTransitionController.SwapScene();
             return;
         }
-        Debug.Log("Gamers");
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/TalkNext", transform.position);
+        //Debug.Log("Gamers");
         text.text = dialogue[index];
         index ++;
     }

@@ -23,6 +23,7 @@ public class WorldSettingsHelper : MonoBehaviour
         {
             worldTypeVal = 0;
         }
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Click", transform.position);
         UpdateText();
     }
 

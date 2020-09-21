@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 200099839}
   - component: {fileID: 200099842}
   - component: {fileID: 200099843}
+  - component: {fileID: 200099844}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -407,6 +408,20 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &200099844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200099838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1001 &271022957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,6 +599,34 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f9c30e60fefdf54e99056cffd09d828, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f972353beb431d044854bd5b58abeb07, type: 3}
+--- !u!1 &271022958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: f972353beb431d044854bd5b58abeb07, type: 3}
+  m_PrefabInstance: {fileID: 271022957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &271022959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271022958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/PortalDrone
+  PlayEvent: 1
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1.2
+  OverrideMaxDistance: 500
 --- !u!1 &412256566
 GameObject:
   m_ObjectHideFlags: 0
@@ -5605,7 +5648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e83396c1a186a64582ec4c964932982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationScene: FlightMovement
+  destinationScene: Title
   transitionDuration: 0.5
   delayBeforeReveal: 0
   nextSceneKeycode: 32
@@ -5624,7 +5667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: cf54b87754725dc46a54e3a342fc3fc4, type: 2}
-  m_Color: {r: 0.03773582, g: 0.03720182, b: 0.03720182, a: 1}
+  m_Color: {r: 0.09019608, g: 0.098039225, b: 0.10588236, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11169,8 +11212,11 @@ MonoBehaviour:
   - <color=#6c349d>Are you sure about this?
   - Yeah, time travel is no biggie
   - <color=#6c349d>.....
-  - We're only about lauch a MANNED vehicle into this crazy vortex..
-  - <color=#6c349d>OK, OK, I get it.
+  - We're only about lauch a MANNED vehicle into a crazy time vortex..
+  - '<color=#6c349d>OK, OK, I get it.
+
+    <size=60%>(the pilot definetly has a death
+    wish)'
   - Right, so, from three now
   - 3
   - 2
@@ -11178,8 +11224,8 @@ MonoBehaviour:
   - ...
   - <color=#6c349d><size=70%>Oh no
   - .. "Oh no" what
-  - <color=#6c349d>The computer is saying this wormhole is ...
-  - <color=#6c349d>infinite.
+  - <color=#6c349d>The data coming back is saying this wormhole is ...
+  - <color=#6c349d>an infinite loop.
   - <size=200%>WHAT
 --- !u!114 &1113144748
 MonoBehaviour:
@@ -11596,6 +11642,7 @@ GameObject:
   - component: {fileID: 1387330303}
   - component: {fileID: 1387330305}
   - component: {fileID: 1387330304}
+  - component: {fileID: 1387330306}
   m_Layer: 0
   m_Name: Launch
   m_TagString: Untagged
@@ -16464,6 +16511,29 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1387330306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387330302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/ShipLaunch
+  PlayEvent: 1
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 75
 --- !u!1 &1421816332
 GameObject:
   m_ObjectHideFlags: 0
@@ -16997,6 +17067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentKit: {fileID: 0}
+  zoneTextController: {fileID: 0}
 --- !u!114 &1554515441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17322,6 +17393,49 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!1 &1803936899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803936901}
+  - component: {fileID: 1803936900}
+  m_Layer: 0
+  m_Name: Quit Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1803936900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803936899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7f7f2bb351d4c4bacca85bec5aa3b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1803936901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803936899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 176.90761, y: 106.804474, z: -18.397856}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884185529
 GameObject:
   m_ObjectHideFlags: 0

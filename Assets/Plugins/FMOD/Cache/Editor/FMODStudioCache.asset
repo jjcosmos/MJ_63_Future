@@ -69,6 +69,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 75
   Length: 12000
+--- !u!114 &-6968895203197018690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6134817637728094978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +112,26 @@ MonoBehaviour:
   MinDistance: 1.2
   MaxDistance: 500
   Length: 30000
+--- !u!114 &-5991511643168385731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5414670937599659301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +178,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4400
+--- !u!114 &-4917219285464045229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/OST
+  m_EditorClassIdentifier: 
+  Path: event:/Music/OST
+  guid: c2c2608f0b7d9e4984f790f9de7b488d
+  Banks:
+  - {fileID: -472982436761654203}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6968895203197018690}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 104000
 --- !u!114 &-4663161116894061504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +248,49 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 552
+--- !u!114 &-2450969123011961462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TalkNext
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TalkNext
+  guid: 0ad88170415edc428e2177e5c978b8b5
+  Banks:
+  - {fileID: -472982436761654203}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 899
+--- !u!114 &-1161912501130905112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-472982436761654203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../../../_FMOD/Krononaut/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637362022044814594
+  lastModified: 637362170775174763
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -228,13 +335,42 @@ MonoBehaviour:
   - {fileID: -4663161116894061504}
   - {fileID: -5045952666102434467}
   - {fileID: 1735689930277672527}
+  - {fileID: 1021666618039671185}
+  - {fileID: 5737781688036824937}
+  - {fileID: 8668924736335023334}
+  - {fileID: -2450969123011961462}
+  - {fileID: -4917219285464045229}
+  - {fileID: 2632888455539879690}
   EditorParameters: []
   MasterBanks:
   - {fileID: -472982436761654203}
   StringsBanks:
   - {fileID: 8343270694773875036}
-  stringsBankWriteTime: 637362022044834540
+  stringsBankWriteTime: 637362170775194703
   cacheVersion: 5
+--- !u!114 &1021666618039671185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PortalDrone
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PortalDrone
+  guid: 8b3f166269a7e840aad38e6d8bd70e46
+  Banks:
+  - {fileID: -472982436761654203}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 9.8
+  MaxDistance: 60
+  Length: 58285
 --- !u!114 &1735689930277672527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +394,69 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4400
+--- !u!114 &2632888455539879690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Title
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Title
+  guid: 6f8dd67e7ed7384bbc74a4c3ea260dfb
+  Banks:
+  - {fileID: -472982436761654203}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3784
+--- !u!114 &2834730491955903252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &2860439001626508355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3008750157785126561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +480,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 550
   Length: 5000
+--- !u!114 &3595941371229266411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &4941181721699649816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +522,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7600
+--- !u!114 &5737781688036824937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ShipLaunch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ShipLaunch
+  guid: 2fd98d1974d1324b84d853f0c021bbb6
+  Banks:
+  - {fileID: -472982436761654203}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 2756
+--- !u!114 &7141952655875986214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/Music/New Event
+  guid: c2c2608f0b7d9e4984f790f9de7b488d
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5991511643168385731}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 104000
 --- !u!114 &8343270694773875036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,9 +582,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../../../_FMOD/Krononaut/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637362022044834540
+  lastModified: 637362170775194703
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1132
+    Value: 1464
   Exists: 1
+--- !u!114 &8668924736335023334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AmbientAsteroid
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AmbientAsteroid
+  guid: a471b25d9f66474a9473d4db1518d286
+  Banks:
+  - {fileID: -472982436761654203}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 250
+  Length: 30857
+--- !u!114 &9045373372886041891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OST/Lowpass
+  m_EditorClassIdentifier: 
+  Name: Lowpass
+  Min: -20
+  Max: 0
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0

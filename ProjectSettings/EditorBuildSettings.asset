@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CutsceneIntro.unity
     guid: 5cee88970d6892b4bafe487d685df159
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: af714ad51348a9b42969f9ca3eb10031
+  - enabled: 1
     path: Assets/Scenes/FlightMovement.unity
     guid: 238eb75f64d53f3488ddf32a27136fac
   - enabled: 1
